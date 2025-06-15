@@ -15,6 +15,40 @@ O modelo é construído em PyTorch, utilizando a arquitetura **MobileNetV2** pr�
     3.  `predict.py`: Classificação de uma única imagem fornecida pelo usuário.
 - **Geração de Relatórios**: Cria um relatório de performance (`evaluation_report.txt`) e uma Matriz de Confusão visual (`confusion_matrix.png`).
 
+## 📈 Resultados do Modelo
+
+Após o treinamento por 10 épocas, o modelo foi avaliado em um conjunto de validação com 5160 imagens, alcançando os seguintes resultados:
+
+- **Acurácia Geral**: **`97.38%`**
+
+### Relatório de Classificação Detalhado
+
+| Classe (Doença) | Precision | Recall | F1-Score |
+| :--- | :---: | :---: | :---: |
+| Pepper__bell___Bacterial_spot | 1.00 | 1.00 | 1.00 |
+| Pepper__bell___healthy | 1.00 | 1.00 | 1.00 |
+| Potato___Early_blight | 0.99 | 0.99 | 0.99 |
+| Potato___Late_blight | 0.99 | 0.98 | 0.99 |
+| Potato___healthy | 1.00 | 0.98 | 0.99 |
+| Tomato_Bacterial_spot | 0.98 | 0.98 | 0.98 |
+| Tomato_Early_blight | 0.93 | 0.89 | 0.91 |
+| Tomato_Late_blight | 0.95 | 0.97 | 0.96 |
+| Tomato_Leaf_Mold | 0.96 | 0.99 | 0.98 |
+| Tomato_Septoria_leaf_spot | 0.97 | 0.93 | 0.95 |
+| Tomato_Spider_mites_Two_spotted_spider_mite | 0.93 | 0.99 | 0.96 |
+| Tomato__Target_Spot | 0.97 | 0.90 | 0.93 |
+| Tomato__Tomato_YellowLeaf__Curl_Virus | 0.99 | 0.99 | 0.99 |
+| Tomato__Tomato_mosaic_virus | 0.99 | 0.97 | 0.98 |
+| Tomato_healthy | 0.98 | 1.00 | 0.99 |
+
+### Matriz de Confusão
+
+A matriz de confusão abaixo ilustra visualmente a performance do modelo, mostrando os acertos na diagonal principal e os erros de classificação fora dela.
+
+*(Para exibir a imagem aqui, após rodar `evaluate.py`, faça o upload do arquivo `confusion_matrix.png` para o seu repositório GitHub e substitua o link abaixo)*
+
+`![Matriz de Confusão](caminho/para/sua/confusion_matrix.png)`
+
 ## 📊 Dataset
 
 O projeto utiliza o dataset público **PlantVillage**, que contém imagens de folhas de plantas saudáveis e com diversas doenças.
@@ -57,7 +91,7 @@ Baixe o dataset do link do Kaggle, descompacte-o e mova o conteúdo (a pasta `Pl
 **4. Crie um Ambiente Virtual (Recomendado)**
 ```bash
 python -m venv venv
-source venv/bin/activate 
+source venv/bin/activate
 ```
 
 **5. Instale as Dependências**
@@ -90,8 +124,8 @@ Este comando inicia o processo completo de treinamento, que irá ler os dados, c
 python main.py
 ```
 - **Saídas**: Ao final, dois arquivos serão criados:
-    1. `saved_models/plant_disease_model.pth` (os pesos do modelo treinado)
-    2. `class_names.json` (a lista de classes para referência)
+    1.  `saved_models/plant_disease_model.pth` (os pesos do modelo treinado)
+    2.  `class_names.json` (a lista de classes para referência)
 
 ### **Etapa 2: Avaliar a Performance do Modelo**
 
@@ -101,8 +135,8 @@ Após o treinamento, execute este script para gerar um relatório detalhado sobr
 python evaluate.py
 ```
 - **Saídas**: Este script gera dois arquivos de relatório:
-    1. `evaluation_report.txt` (Acurácia geral, precisão, recall e F1-score para cada classe).
-    2. `confusion_matrix.png` (Um gráfico visual que mostra onde o modelo acertou e errou).
+    1.  `evaluation_report.txt` (Acurácia geral, precisão, recall e F1-score para cada classe).
+    2.  `confusion_matrix.png` (Um gráfico visual que mostra onde o modelo acertou e errou).
 
 ### **Etapa 3: Fazer uma Previsão em uma Nova Imagem**
 
