@@ -6,6 +6,5 @@ venv/
 /saved_models/
 
 /evaluation_report.txt
-/confusion_matrix.png
 
 .DS_Store
