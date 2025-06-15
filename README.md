@@ -45,9 +45,8 @@ Após o treinamento por 10 épocas, o modelo foi avaliado em um conjunto de vali
 
 A matriz de confusão abaixo ilustra visualmente a performance do modelo, mostrando os acertos na diagonal principal e os erros de classificação fora dela.
 
-*(Para exibir a imagem aqui, após rodar `evaluate.py`, faça o upload do arquivo `confusion_matrix.png` para o seu repositório GitHub e substitua o link abaixo)*
 
-`![Matriz de Confusão](caminho/para/sua/confusion_matrix.png)`
+`![Matriz de Confusão](https://github.com/mggmauricio/plant_classification/confusion_matrix.png)`
 
 ## 📊 Dataset
 
